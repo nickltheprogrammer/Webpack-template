@@ -9,7 +9,17 @@
 <body>
   <h1>Webpack - TypeScript - Scss</h1>
   <h2>TypeScript Hello World</h2>  
-  <div id="content"></div>
+  <div id="app">
+    <input v-model="Text" placeholder="Text" id="inputField">  
+    <select id="SelectedCase" v-model="SelectedCase">
+      <option value="Upper case">Upper case</option>
+      <option value="Lower case">Lower case</option>
+      <option value="Reverse text">Reverse text</option>
+    </select>
+    <button v-on:click="Cases">Do it!</button>
+    <button v-on:click="Clear">Clear text</button>
+    <div id="outputField">{{ Text }}</div>
+  </div>
     
   <script src="bundle.js"></script>
 </body>
