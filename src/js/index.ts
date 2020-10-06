@@ -1,12 +1,24 @@
-interface Person {
-    firstName: string;
-    lastName: string;
-}
-
-function greeter(person: Person): string {
-    return "Hello, " + person.firstName + " " + person.lastName;
-}
-let user: Person = { firstName: "John", lastName: "Doe" };
-
-let element: HTMLDivElement = <HTMLDivElement> document.getElementById("content");
-element.innerHTML = greeter(user);
+new Vue({
+    el: "#app",
+    data: {
+        Text: "",
+        SelectedCase: ""
+    },
+    methods: {
+        Cases() {
+            switch(this.SelectedCase) {
+            case "Upper case":
+            this.Text = this.Text.toUpperCase();
+            break;
+            case "Lower case":
+            this.Text = this.Text.toLowerCase();
+            break;
+            case "Reverse text":
+            this.Text = this.Text.split('').reverse().join('');
+            }
+        },
+        Clear() {
+            this.Text = 0;
+        }
+    }
+})
